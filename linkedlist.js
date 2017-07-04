@@ -21,8 +21,6 @@ var LinkedList = (function () {
             while (last.next != null) {if (window.CP.shouldStopExecution(1)){break;}
                 last = last.next;
             }
-window.CP.exitedLoop(1);
-
             last.next = toAdd;
         }
         else {
@@ -37,7 +35,6 @@ window.CP.exitedLoop(1);
                 prevNode = last;
                 last = last.next;
             }
-window.CP.exitedLoop(2);
 
             if (prevNode != null) {
                 prevNode.next = null;
@@ -61,7 +58,6 @@ window.CP.exitedLoop(2);
                     current = current.next;
                 }
             }
-window.CP.exitedLoop(3);
 
             if (this.head.data > data) {
                 this.head = this.head.next;
@@ -74,7 +70,6 @@ window.CP.exitedLoop(3);
             console.log(current.data);
             current = current.next;
         }
-window.CP.exitedLoop(4);
 
     };
     return LinkedList;
