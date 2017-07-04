@@ -29,6 +29,43 @@ class LinkedList {
     }
   }
   
+  removeTail() {
+    if(this.head!=null) {
+      var last = this.head;  
+      var prevNode;
+      while(last.next != null) {
+        prevNode = last;
+        last = last.next;       
+      }   
+      if(prevNode!=null) {
+         prevNode.next = null;
+      } else {
+        this.head = null;
+      }      
+    }
+  } 
+  
+  removeAllGreaterThan(data: number) {
+    if(this.head != null) {
+      var current = this.head.next;           
+      var prevNode = this.head;
+      
+      while(current != null) { 
+        if(current.data > data) {
+          prevNode.next = current.next;
+          current = current.next;
+        } else {
+          prevNode = current;
+          current = current.next; 
+        }       
+      }   
+      
+      if(this.head.data > data) {
+        this.head = this.head.next;
+      }
+    }
+  } 
+  
   printAll() {
     var current = this.head;
     while(current != null) {
@@ -39,20 +76,13 @@ class LinkedList {
   }
 }
 
-// Run a test
 var linkedList = new LinkedList();
-linkedList.addFirst(1);
-linkedList.addFirst(3);
-linkedList.addFirst(5);
-linkedList.addLast(4);
-linkedList.addLast(9);
+linkedList.addFirst(9);
 linkedList.addFirst(7);
-linkedList.printAll(); 
-
-// output
-7
-1
-3
-5
-4
-9
+linkedList.addFirst(4);
+linkedList.addLast(5);
+linkedList.addLast(7);
+linkedList.addLast(8);
+linkedList.addFirst(1);
+linkedList.removeAllGreaterThan(7);
+linkedList.printAll();  
