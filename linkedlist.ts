@@ -80,9 +80,22 @@ var linkedList = new LinkedList();
 linkedList.addFirst(9);
 linkedList.addFirst(7);
 linkedList.addFirst(4);
+
 linkedList.addLast(5);
 linkedList.addLast(7);
 linkedList.addLast(8);
+
 linkedList.addFirst(1);
+
+linkedList.removeTail();
+
 linkedList.removeAllGreaterThan(7);
+
 linkedList.printAll();  
+
+
+// 1
+// 4
+// 7
+// 5
+// 7
